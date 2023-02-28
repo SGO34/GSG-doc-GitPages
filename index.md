@@ -9,6 +9,19 @@ date: 2023-01-31
 showTitle: true
 ---
 
+## Table of contents
+
+1. Getting started
+2. [Creating your schema](2creatingYourSchema.md)
+3. [Advanced configuration](3advancedConfiguration.md)
+4. [Performances](4performances.md)
+
+You can also [Start with Boilerplates](gettingStartedBoilerplates.md)
+
+---
+
+## Introduction
+
 Graphql-Sequelize-Generator (GSG) is a set of tools that will allow you to
 easily generate a GraphQL API from your sequelize models.
 

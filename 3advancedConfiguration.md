@@ -7,6 +7,14 @@ hideAnchor: false
 showTitle: true
 ---
 
+## Table of contents
+
+1. [Getting started](index.md)
+2. [Creating your schema](2creatingYourSchema.md)
+3. Advanced configuration
+4. [Performances](4performances.md)
+
+You can also [Start with Boilerplates](gettingStartedBoilerplates.md)
 Here is a sum-up of everything you can configure in a model declaration:
 
 ---

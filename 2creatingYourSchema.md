@@ -7,6 +7,17 @@ hideAnchor: false
 showTitle: true
 ---
 
+## Table of contents
+
+1. [Getting started](index.md)
+2. Creating your schema
+3. [Advanced configuration](3advancedConfiguration.md)
+4. [Performances](4performances.md)
+
+You can also [Start with Boilerplates](gettingStartedBoilerplates.md)
+
+---
+
 ## Preparing your schema
 
 Create a schema.js, and initialize the schema with this code:
