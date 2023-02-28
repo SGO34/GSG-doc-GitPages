@@ -1,7 +1,7 @@
 ---
-title: 'Performances'
-metaTitle: 'Performances'
-metaDescription: 'Here we talk about the performances of graphql-sequelize-generator'
+title: "Performances"
+metaTitle: "Performances"
+metaDescription: "Here we talk about the performances of graphql-sequelize-generator"
 sidebar: Documentation
 hideAnchor: false
 showTitle: true
@@ -86,3 +86,5 @@ list: {
     }
   },
 ```
+
+[Previous : Advanced configuration](3advancedConfiguration.md)

@@ -1,7 +1,7 @@
 ---
-title: 'Creating your schema'
-metaTitle: 'Creating your schema'
-metaDescription: 'Here we describe the creation of a schema to be used with graphql-sequelize-generator'
+title: "Creating your schema"
+metaTitle: "Creating your schema"
+metaDescription: "Here we describe the creation of a schema to be used with graphql-sequelize-generator"
 sidebar: Documentation
 hideAnchor: false
 showTitle: true
@@ -15,16 +15,16 @@ Create a schema.js, and initialize the schema with this code:
 const {
   generateModelTypes,
   generateApolloServer,
-} = require('graphql-sequelize-generator')
-const { WebSocketServer } = require('ws')
-const { PubSub } = require('graphql-subscriptions')
-const models = require('./models')
-const { GraphQLObjectType, GraphQLString } = require('graphql')
+} = require("graphql-sequelize-generator");
+const { WebSocketServer } = require("ws");
+const { PubSub } = require("graphql-subscriptions");
+const models = require("./models");
+const { GraphQLObjectType, GraphQLString } = require("graphql");
 
-const graphqlSchemaDeclaration = {}
+const graphqlSchemaDeclaration = {};
 //Models here
 
-const types = generateModelTypes(models)
+const types = generateModelTypes(models);
 
 module.exports = (globalPreCallback = () => null, httpServer) => {
   // Creating the WebSocket server
@@ -33,13 +33,13 @@ module.exports = (globalPreCallback = () => null, httpServer) => {
     server: httpServer,
     // Pass a different path here if app.use
     // serves expressMiddleware at a different path
-    path: '/graphql',
-  })
+    path: "/graphql",
+  });
 
-  const customMutations = {}
+  const customMutations = {};
   customMutations.logThat = {
     type: new GraphQLObjectType({
-      name: 'logThat',
+      name: "logThat",
       fields: {
         message: { type: GraphQLString },
       },
@@ -49,16 +49,16 @@ module.exports = (globalPreCallback = () => null, httpServer) => {
         type: GraphQLString,
       },
     },
-    description: 'Refresh the status of the call for projects.',
+    description: "Refresh the status of the call for projects.",
     resolve: async (source, args, context, info) => {
       // Your mutation can do something here...
-      console.log(args.message)
+      console.log(args.message);
 
       return {
         message: args.message,
-      }
+      };
     },
-  }
+  };
 
   return {
     server: generateApolloServer({
@@ -75,17 +75,17 @@ module.exports = (globalPreCallback = () => null, httpServer) => {
         // Example of socket security hook.
         subscriptions: {
           onConnect: () => {
-            return true
+            return true;
           },
         },
       },
-      callWebhook: data => {
-        return data
+      callWebhook: (data) => {
+        return data;
       },
       pubSubInstance: new PubSub(),
     }),
-  }
-}
+  };
+};
 ```
 
 ---
@@ -99,7 +99,7 @@ Here is the simplest example possible to define the "user" model:
 ```javascript
 graphqlSchemaDeclaration.user = {
   model: models.user,
-}
+};
 ```
 
 This will by default:
@@ -114,23 +114,23 @@ Our example file looks like this :
 const {
   generateModelTypes,
   generateApolloServer,
-} = require('graphql-sequelize-generator')
-const { WebSocketServer } = require('ws')
-const { PubSub } = require('graphql-subscriptions')
-const models = require('./models')
-const { GraphQLObjectType, GraphQLString } = require('graphql')
+} = require("graphql-sequelize-generator");
+const { WebSocketServer } = require("ws");
+const { PubSub } = require("graphql-subscriptions");
+const models = require("./models");
+const { GraphQLObjectType, GraphQLString } = require("graphql");
 
-const graphqlSchemaDeclaration = {}
+const graphqlSchemaDeclaration = {};
 //Models here
 graphqlSchemaDeclaration.user = {
   model: models.user,
-}
+};
 
 graphqlSchemaDeclaration.company = {
   model: models.company,
-}
+};
 
-const types = generateModelTypes(models)
+const types = generateModelTypes(models);
 
 module.exports = (globalPreCallback = () => null, httpServer) => {
   // Creating the WebSocket server
@@ -139,13 +139,13 @@ module.exports = (globalPreCallback = () => null, httpServer) => {
     server: httpServer,
     // Pass a different path here if app.use
     // serves expressMiddleware at a different path
-    path: '/graphql',
-  })
+    path: "/graphql",
+  });
 
-  const customMutations = {}
+  const customMutations = {};
   customMutations.logThat = {
     type: new GraphQLObjectType({
-      name: 'logThat',
+      name: "logThat",
       fields: {
         message: { type: GraphQLString },
       },
@@ -155,16 +155,16 @@ module.exports = (globalPreCallback = () => null, httpServer) => {
         type: GraphQLString,
       },
     },
-    description: 'Refresh the status of the call for projects.',
+    description: "Refresh the status of the call for projects.",
     resolve: async (source, args, context, info) => {
       // Your mutation can do something here...
-      console.log(args.message)
+      console.log(args.message);
 
       return {
         message: args.message,
-      }
+      };
     },
-  }
+  };
 
   return {
     server: generateApolloServer({
@@ -181,17 +181,17 @@ module.exports = (globalPreCallback = () => null, httpServer) => {
         // Example of socket security hook.
         subscriptions: {
           onConnect: () => {
-            return true
+            return true;
           },
         },
       },
-      callWebhook: data => {
-        return data
+      callWebhook: (data) => {
+        return data;
       },
       pubSubInstance: new PubSub(),
     }),
-  }
-}
+  };
+};
 ```
 
 ⚠️ The model declaration with GraphQL-Sequelize-Generator follows the models declaration you did with Sequelize-CLI : https://sequelize.org/docs/v6/other-topics/migrations/
@@ -207,13 +207,13 @@ For example:
 ```javascript
 graphqlSchemaDeclaration.user = {
   model: models.user,
-}
+};
 graphqlSchemaDeclaration.car = {
   model: models.car,
-}
+};
 graphqlSchemaDeclaration.house = {
   model: models.house,
-}
+};
 ```
 
 Will allow you to query:
@@ -242,3 +242,6 @@ If you have the relations set in your Sequelize folder.
 ---
 
 We now have a fully functional server with our models. Start it and access to Apollo GraphQL playground with the URL shown in the console.
+
+[Previous : Getting started](index.md)
+[Next : Advanced configuration](3advancedConfiguration.md)

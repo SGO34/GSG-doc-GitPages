@@ -1,7 +1,7 @@
 ---
-title: 'Advanced configuration'
-metaTitle: 'Advanced configuration'
-metaDescription: 'Here we describe the advanced configurations of graphql-sequelize-generator'
+title: "Advanced configuration"
+metaTitle: "Advanced configuration"
+metaDescription: "Here we describe the advanced configurations of graphql-sequelize-generator"
 sidebar: Documentation
 hideAnchor: false
 showTitle: true
@@ -78,14 +78,14 @@ before: [
 
     // Examples
     if (!context.xxx) {
-      throw new Error('xxx is missing!')
+      throw new Error("xxx is missing!");
     }
 
     if (info.xxx) {
-      throw new Error('xxx is provided when it should not!')
+      throw new Error("xxx is provided when it should not!");
     }
   },
-]
+];
 ```
 
 ---
@@ -98,8 +98,8 @@ before: [
 Exemple:
 
 ```javascript
-if (!context.user.role !== 'admin') {
-  throw new Error('You must be admin to use this endpoint!')
+if (!context.user.role !== "admin") {
+  throw new Error("You must be admin to use this endpoint!");
 }
 // The function returns nothing
 ```
@@ -111,7 +111,7 @@ if (!context.user.role !== 'admin') {
 ```javascript
 list: {
   {
-    options
+    options;
   }
 }
 ```
@@ -332,14 +332,14 @@ You can also declare a fully custom endpoint who will not depend on the model. I
 ```javascript
 graphqlSchemaDeclaration.myCustomCarEndpoint = () => {
   const car = new GraphQLObjectType({
-    name: 'questionsScore',
-    description: 'A score per question',
+    name: "questionsScore",
+    description: "A score per question",
     fields: {
       name: { type: GraphQLString },
       type: { type: GraphQLString },
       constructor: { type: GraphQLString },
     },
-  })
+  });
 
   return {
     type: new GraphQLList(car),
@@ -348,8 +348,11 @@ graphqlSchemaDeclaration.myCustomCarEndpoint = () => {
     },
     resolve: async (source, args, context) => {
       // Fetch the cars...
-      return result
+      return result;
     },
-  }
-}
+  };
+};
 ```
+
+[Previous : Creating your schema](2creatingYourSchema.md)
+[Next : Performances](4performances.md)
