@@ -354,6 +354,6 @@ graphqlSchemaDeclaration.myCustomCarEndpoint = () => {
 };
 ```
 
-[Previous:Creating your schema](2creatingYourSchema.md)
+[Previous: Creating your schema](2creatingYourSchema.md)
 
-[Next:Performances](4performances.md)
+[Next: Performances](4performances.md)

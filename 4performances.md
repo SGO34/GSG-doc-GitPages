@@ -87,6 +87,6 @@ list: {
   },
 ```
 
-[Previous:Advanced configuration](3advancedConfiguration.md)
+[Previous: Advanced configuration](3advancedConfiguration.md)
 
 [Next: Getting started with Boilerplates](gettingStartedBoilerplates.md)

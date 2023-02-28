@@ -120,4 +120,4 @@ createServer();
 
 In the next part, we will see how to create a schema and to insert models.
 
-[Next:Creating your schema](2creatingYourSchema.md)
+[Next: Creating your schema](2creatingYourSchema.md)
