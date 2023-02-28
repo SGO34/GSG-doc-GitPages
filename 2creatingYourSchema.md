@@ -244,4 +244,5 @@ If you have the relations set in your Sequelize folder.
 We now have a fully functional server with our models. Start it and access to Apollo GraphQL playground with the URL shown in the console.
 
 [Previous : Getting started](index.md)
-<div align="right">[Next : Advanced configuration](3advancedConfiguration.md)</div>
+
+[Next : Advanced configuration](3advancedConfiguration.md)
