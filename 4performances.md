@@ -18,13 +18,9 @@ You can also [Start with Boilerplates](gettingStartedBoilerplates.md)
 
 ---
 
-Here is a sum-up of everything you can configure in a model declaration:
+### Dataloader-sequelize
 
 GSG uses [graphql-sequelize](https://github.com/mickhansen/graphql-sequelize) under the hood, and so it inherit it's dependency [dataloader-sequelize](https://github.com/mickhansen/dataloader-sequelize).
-
----
-
-### Dataloader-sequelize
 
 Dataloader-sequelize (DS) is an implementation of the Facebook [dataloader](https://github.com/graphql/dataloader) for the Sequelize ORM.
 
