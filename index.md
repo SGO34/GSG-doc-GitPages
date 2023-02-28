@@ -60,32 +60,32 @@ Create a file where you will set up your server and paste the following code. We
 
 ```javascript
 // index.js
-const { expressMiddleware } = require('@apollo/server/express4')
-const express = require('express')
-const http = require('http')
-const cors = require('cors')
-const json = require('body-parser')
-const { createContext, EXPECTED_OPTIONS_KEY } = require('dataloader-sequelize')
-const setupServer = require('./schema')
-const models = require('./models') //Assuming "models" is your import of the Sequelize models folder, initialized by Sequelize-Cli
+const { expressMiddleware } = require("@apollo/server/express4");
+const express = require("express");
+const http = require("http");
+const cors = require("cors");
+const json = require("body-parser");
+const { createContext, EXPECTED_OPTIONS_KEY } = require("dataloader-sequelize");
+const setupServer = require("./schema");
+const models = require("./models"); //Assuming "models" is your import of the Sequelize models folder, initialized by Sequelize-Cli
 
 const createServer = async (options = {}, globalPreCallback = () => null) => {
-  const app = express()
+  const app = express();
   options = {
     spdy: { plain: true },
     ...options,
-  }
-  const httpServer = http.createServer(options, app)
-  const { server } = setupServer(globalPreCallback, httpServer)
-  await server.start()
+  };
+  const httpServer = http.createServer(options, app);
+  const { server } = setupServer(globalPreCallback, httpServer);
+  await server.start();
   //server.applyMiddleware({ app, path: '/graphql' })
   app.use(
-    '/graphql',
+    "/graphql",
     cors(),
     json(),
     expressMiddleware(server, {
       context: async ({ req, connection }) => {
-        const contextDataloader = createContext(models.sequelize)
+        const contextDataloader = createContext(models.sequelize);
 
         // Connection is provided when a webSocket is connected.
         if (connection) {
@@ -93,29 +93,31 @@ const createServer = async (options = {}, globalPreCallback = () => null) => {
           return {
             ...connection.context,
             [EXPECTED_OPTIONS_KEY]: contextDataloader,
-          }
+          };
         }
       },
     })
-  )
+  );
 
-  await new Promise(resolve => {
+  await new Promise((resolve) => {
     httpServer.listen(process.env.PORT || 8080, () => {
-      resolve()
-    })
+      resolve();
+    });
 
     console.log(
       `🚀 Server ready at http://localhost:${process.env.PORT || 8080}/graphql`
-    )
-  })
-  return httpServer
-}
+    );
+  });
+  return httpServer;
+};
 
-const closeServer = async server => {
-  await Promise.all([new Promise(resolve => server.close(() => resolve()))])
-}
+const closeServer = async (server) => {
+  await Promise.all([new Promise((resolve) => server.close(() => resolve()))]);
+};
 
-createServer()
+createServer();
 ```
 
 In the next part, we will see how to create a schema and to insert models.
+
+[Next : Creating your schema](2creatingYourSchema.md)
