@@ -99,3 +99,12 @@ list: {
 [Previous: Advanced configuration](3advancedConfiguration.md)
 
 [Next: Getting started with Boilerplates](gettingStartedBoilerplates.md)
+
+---
+
+### Teamstarter's other libraries
+
+- [GraphQL-Node-Jobs](https://teamstarter.github.io/GNJ-documentation/)
+  - A job scheduler, a runner and an interface to manage jobs. In one lib.
+- [GraphQL-Web-Hooks](https://teamstarter.github.io/GWH-documentation/)
+  - A webhook implementation for GraphQL

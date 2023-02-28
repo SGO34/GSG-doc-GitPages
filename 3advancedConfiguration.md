@@ -365,3 +365,12 @@ graphqlSchemaDeclaration.myCustomCarEndpoint = () => {
 [Previous: Creating your schema](2creatingYourSchema.md)
 
 [Next: Performances](4performances.md)
+
+---
+
+### Teamstarter's other libraries
+
+- [GraphQL-Node-Jobs](https://teamstarter.github.io/GNJ-documentation/)
+  - A job scheduler, a runner and an interface to manage jobs. In one lib.
+- [GraphQL-Web-Hooks](https://teamstarter.github.io/GWH-documentation/)
+  - A webhook implementation for GraphQL

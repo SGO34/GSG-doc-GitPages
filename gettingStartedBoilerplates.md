@@ -21,3 +21,12 @@ Follow the instructions in the readme files to use them:
 
 - In JavaScript: [GSG Boilerplate](https://github.com/teamstarter/gsg-boilerplate)
 - In TypeScript: [GSG Boilerplate TypeScript](https://github.com/teamstarter/gsg-boilerplate-typescript)
+
+---
+
+### Teamstarter's other libraries
+
+- [GraphQL-Node-Jobs](https://teamstarter.github.io/GNJ-documentation/)
+  - A job scheduler, a runner and an interface to manage jobs. In one lib.
+- [GraphQL-Web-Hooks](https://teamstarter.github.io/GWH-documentation/)
+  - A webhook implementation for GraphQL
